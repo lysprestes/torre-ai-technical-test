@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import search from '../assets/search.svg'
+import '../styles/Search.css';
 
 const Search = () => {
   const [username, setUsername] = useState('');
@@ -25,27 +27,27 @@ const Search = () => {
 
   return (
     <div>
-      <h1>Page title</h1>
-      <div>
+      <div className='center-content'>
         <input
+          className='search-input centered-content'
           type="text"
-          placeholder="Enter a username"
+          placeholder="Search people by name"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
-      </div>
-      <div>
-        {error && <p>{error}</p>}
-        <h2>Search Results:</h2>
-        <ul>
-          {results.map((result) => (
-            <li key={result.index}>
-              <h3>{result.name}</h3>
-              <p>{result.professionalHeadline}</p>
-            </li>
-          ))}
-        </ul>
+        <button className="search-button" onClick={handleSearch}><img className="search-icon" src={search} />Search</button>
+        {results ? null : (<div className='centered-content'>
+          {error && <p>{error}</p>}
+          <h2>Search Results:</h2>
+          <ul>
+            {results.map((result) => (
+              <li key={result.index}>
+                <h3>{result.name}</h3>
+                <p>{result.professionalHeadline}</p>
+              </li>
+            ))}
+          </ul>
+        </div>)}
       </div>
     </div>
   );
