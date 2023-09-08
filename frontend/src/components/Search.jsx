@@ -38,15 +38,19 @@ const Search = () => {
         <button className="search-button" onClick={handleSearch}><img className="search-icon" src={search} />Search</button>{console.log(results)}
         {results && results.length > 0 ? (<div className='centered-content'>
           {error && <p>{error}</p>}
-          <h2>Search Results:</h2>
-          <ul>
-            {results.map((result, index) => (
-              <li key={index}>
-                <h3>{result.name}</h3>
-                <p>{result.person.professionalHeadline}</p>
-              </li>
-            ))}
-          </ul>
+          <h3>Search Results:</h3>
+          <div className='results-card'>
+
+            <ul>
+              {results.map((result, index) => (
+                <a href={`https://torre.ai/${result.person.publicId}`} target='_blank'>
+                  <li key={index}>
+                    <h3 className='person-name'>{result.person.name}</h3>
+                    <p className='person-professional'>{result.person.professionalHeadline}</p>
+                  </li></a>
+              ))}
+            </ul>
+          </div>
         </div>) : null}
       </div>
     </div>

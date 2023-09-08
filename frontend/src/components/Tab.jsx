@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Page.css';
+import '../styles/Tab.css';
 
 function Tab() {
   return (

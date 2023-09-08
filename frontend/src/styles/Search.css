@@ -64,8 +64,26 @@ button:hover {
   background-color: #363636;
 }
 
-.results {
-  background-color: aquamarine;
-  display: flex;
-  align-self: flex-end;
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a :hover {
+  opacity: 90%;
+
+}
+
+.person-name {
+  color: #cddc39;
+}
+
+.person-professional {
+  margin-top: -20px;
+  color: white;
+  text-decoration: none;
 }
