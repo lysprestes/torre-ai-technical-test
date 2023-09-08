@@ -1,0 +1,43 @@
+.container {
+  position: fixed;
+  margin-top: 56px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #27292d;
+  color: white;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 16px;
+  margin: 0;
+  padding: 20px;
+  background: #27292d;
+  color: #cddc39;
+  cursor: pointer;
+  max-width: 33%;
+  flex: 1 0 auto;
+  border-top: 2px solid rgba(0,0,0,0);
+}
+
+.tab:hover {
+  background-color: #010101;
+  color: rgba(255,255,255,.9);
+  border-top: 2px solid rgba(255,255,255,.9);
+  border-radius: 8px 8px 0 0;
+  height: 100%;
+}
+
+.no-tab {
+  padding-right: 1rem;
+}
