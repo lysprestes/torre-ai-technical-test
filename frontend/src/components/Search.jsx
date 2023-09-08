@@ -35,19 +35,19 @@ const Search = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button className="search-button" onClick={handleSearch}><img className="search-icon" src={search} />Search</button>
-        {results ? null : (<div className='centered-content'>
+        <button className="search-button" onClick={handleSearch}><img className="search-icon" src={search} />Search</button>{console.log(results)}
+        {results && results.length > 0 ? (<div className='centered-content'>
           {error && <p>{error}</p>}
           <h2>Search Results:</h2>
           <ul>
-            {results.map((result) => (
-              <li key={result.index}>
+            {results.map((result, index) => (
+              <li key={index}>
                 <h3>{result.name}</h3>
-                <p>{result.professionalHeadline}</p>
+                <p>{result.person.professionalHeadline}</p>
               </li>
             ))}
           </ul>
-        </div>)}
+        </div>) : null}
       </div>
     </div>
   );
